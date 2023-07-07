@@ -1,0 +1,29 @@
+//add comment to a news
+
+###
+POST http://localhost:8080/comments
+Content-Type: application/json
+Authorization: Bearer jwtToken
+
+{
+    "newsId" : "the id of the news (Number)",
+    "comment" : "your comment"
+}
+
+//edit comment of a news
+
+###
+PUT http://localhost:8080/comments
+Content-Type: application/json
+Authorization: Bearer jwtToken
+
+{
+    "commentId" : "the id of the comment (Number)",
+    "comment" : "your new comment",
+}
+
+//borrar comentario
+
+###
+DELETE http://localhost:8080/comments/6
+Authorization: Bearer jwtToken

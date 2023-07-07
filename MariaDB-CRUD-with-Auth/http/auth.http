@@ -1,0 +1,56 @@
+// register
+
+###
+POST http://localhost:8080/signup
+Content-Type: application/json
+
+{
+    "username" : "miguelvg4",
+    "email" : "miguelrvg6@gmail.com",
+    "password":  "lalala123",
+    "confirmPassword": "lalala123"
+    //"img" : "...profile pic"
+}
+
+//login
+
+###
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+    "email" : "your email",
+    "password":  "your password"
+}
+
+//get your account
+
+###
+GET http://localhost:8080/account
+Authorization: Bearer jwtToken
+
+//edit your profile
+
+###
+PUT http://localhost:8080/account
+Authorization: Bearer jwtToken
+Content-Type: application/json
+
+{
+    "username": "your username",
+    "email" : "your email",
+    "password":  "your new password",
+    "confirmPassword" : "confirm your new password",
+    "actualPassword" : "your actual password"
+}
+
+//eliminar perfil
+
+###
+POST http://localhost:8080/account/delete
+Authorization: Bearer jwtToken
+Content-Type: application/json
+
+{
+    "password": "your password"
+}

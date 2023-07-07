@@ -1,0 +1,48 @@
+//create a news
+
+###
+POST http://localhost:8080/news
+Content-Type: application/json
+Authorization: Bearer jwtToken
+
+{
+    "title" : "your title",
+    "content" : "your comment",
+    //"images[]" : "...your images"
+}
+
+//get a single news with its comments and images
+
+###
+GET http://localhost:8080/news/10
+
+//get all the news
+
+###
+GET http://localhost:8080/news
+
+//get the news made by you
+
+###
+GET http://localhost:8080/news/my-news
+Authorization: Bearer jwtToken
+
+//edit one of your news
+
+###
+PUT http://localhost:8080/news/6
+Content-Type: application/json
+Authorization: Bearer jwtToken
+
+{
+    "title" : "your new title",
+    "content" : "your content",
+    "imagesToDelete" : ["the id's of the images that you want to delete (if you want to)"].
+    //"images[]" : "...your new images"
+}
+
+//delete one of your news
+
+###
+DELETE http://localhost:8080/news/10
+Authorization: Bearer jwtToken
